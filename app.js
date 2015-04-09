@@ -59,8 +59,13 @@ app.get('/favorites', function(req, res) {
 });
 
 app.post('/favorites', function(req, res) {
-	var favorite = req.body.favorite
-	db.Favorite.create(favorite)
+	var title = req.body.favorite.title;
+  var plot = req.body.favorite.plot;
+  var genre = req.body.favorite.genre;
+  //split string, get rid of min and get number
+  var runtime = Number(req.body.favorite.runtime.split(" ")[0]);
+	var favorite = {title: title, plot: plot, genre: genre, runtime: runtime};
+  db.Favorite.create(favorite)
 		.then(function() {
 		res.redirect('/favorites');
 		});
