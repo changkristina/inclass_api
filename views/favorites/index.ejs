@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+	<h1>My Favorites</h1>
+
+	<% ejsFavorites.forEach(function(favorite) { %>
+
+		<div>
+		<%= favorite.title %><br><br>
+		<%= favorite.plot %><br><br><br>
+		</div>
+
+	<% }) %>
+
+	<br><br>
+	<a href="/search">Back to the Search Results Page</a>
+	<br><br>
+	<a href="/">Back to the Main Search Page</a>
+
+</body>
+</html>

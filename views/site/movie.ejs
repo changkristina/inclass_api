@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+  <h1>Movie Info</h1>
+
+  <h2>Title: <%= movie.Title %></h2>
+  <div>Plot: <%= movie.Plot %></div><br>
+  <div>Genre: <%= movie.Genre %></div><br>
+  <div>Runtime: <%= movie.Runtime %></div><br>
+
+	<form method="POST" action='/favorites'>
+		<input name="favorite[title]" value="<%= movie.Title %>" type="hidden">
+		<input name="favorite[plot]" value="<%= movie.Plot %>" type="hidden">
+		<input name="favorite[genre]" value="<%= movie.Genre %>" type="hidden">
+		<input name="favorite[runtime]" value="<%= movie.Runtime %>" type="hidden">
+  		<button type="submit">Add to Favorites</button>
+	</form>
+
+	<br><br>
+	<a href="/search">Back to the Search Results Page</a>
+	<br><br>
+	<a href="/">Back to the Main Search Page</a>
+	
+</body>
+</html>

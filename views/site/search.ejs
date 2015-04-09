@@ -1,27 +1,31 @@
 <!DOCTYPE HTML>
 <html>
 <body>
-  <h1>Search Page</h1>
+
+  <h1>Search Results</h1>
+
   <form method="GET" action="/search">
     <input type="text" name="q" placeholder="Search">
-    <button>Click Me... I dare you.</button>
+    <button>Search again!</button>
   </form>
+
   <h1> Movies: </h1>
+
   <% movies.forEach(function(movie) { %>
+    
     <div>
       <div>
         <h3>Title:</h3>
         <a href="/movie?id=<%= movie.imdbID %>">
           <%= movie.Title %>
         </a>
-     </div>
-     <div>
-       <h3>Plot:</h3>
-       <p>
-        <%= movie.Plot %>
-       </p>
-     </div>
+      </div>
+      <div>
+          <%= movie.Plot %>
+      </div>
     </div>
+
   <% }); %>
+
 </body>
 </html>
